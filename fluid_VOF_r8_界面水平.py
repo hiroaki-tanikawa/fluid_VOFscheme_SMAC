@@ -184,7 +184,7 @@ def corrector(u_pre,v_pre,dp):
  return u,v
 
 
-#グラフ描画--------------------------------------------------------
+#グラフ描画---------------------------------------------------------------------------
 fig,ax = plt.subplots(figsize=(5,5),dpi=120)
 ims=[]#アニメーション用
 ax.set_xlim(-2,52)
@@ -193,7 +193,7 @@ ax.set_ylim(-2,52)
 tend=10000
 F=F_ini()
 u,v,p=u_v_lo_p_ini(F)
-for t in range(tend):
+for t in range(tend):#時間発展---------------------------------------------------------
   F=F_cal(F,u,v)
   u,v=predictor(u,v,p)
   u_pre,v_pre=u,v
@@ -225,27 +225,6 @@ for t in range(tend):
   print(summ)
   """
 
-  """
-  for J in range (0,jmax):
-    for I in range (0,imax):
-      if np.mod(I,5)==0 and np.mod(J,5)==0:  
-        text=plt.text(x[J,I],y[J,I],'{:.1g}'.format(F[J,I]),fontsize=10)
-  """
-  """
-  for I in range (0,imax):
-    if np.mod(I,5)==0:
-      text=plt.text(x[20,I],y[20,I],'{:.1g}'.format(F[23,I]),fontsize=10)        
-      text=plt.text(x[25,I],y[25,I],'{:.1g}'.format(F[24,I]),fontsize=10)
-      text=plt.text(x[30,I],y[30,I],'{:.1g}'.format(F[25,I]),fontsize=10)
-  """
-
-  #text=plt.text(x[I,J],y[I,J],F[J,I]-F_old[J,I],fontsize=10)
-  #line1,=plt.plot(20*v[:,3]+40,j,color="black")
-  #line2,=plt.plot(j,20*u[10,:]+20,color="red")        
-  #line3,=plt.plot(p[:,3]/20+20,j,color="red")    
-  #print(x,y,u)
-  #colormap=plt.pcolormesh(x[::2,::2],y[::2,::2],p[::2,::2],cmap='Blues')
-  #contor=plt.contour(x[::2,::2],y[::2,::2],dp[::2,::2])
   if np.mod(t,100)==0:
     vector=ax.quiver(x[::2,::2],y[::2,::2],u[::2,::2],v[::2,::2],color="blue", scale = 40)
     ims.append([vector])#アニメーション用  
