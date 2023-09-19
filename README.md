@@ -6,5 +6,4 @@
 ![fluid_vof-_1_](https://github.com/hiroaki-tanikawa/fluid_VOFscheme_SMAC/assets/143544995/adb7861e-ec8b-4410-b63c-7bc63949e1e3)
 
 ダムブレーク問題のような激しい動きが解けるよう調整中。  
-質量保存を満たしてるか?  
-(セル内に水が入った分だけ出ていかないとセル内で水が圧縮or膨張したことになる)
+※圧力が収束していないことが判明。修正中
